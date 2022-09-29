@@ -1,0 +1,28 @@
+.TH GLPSOL 1
+.SH NAME
+glpsol \- large-scale linear and mixed integer programming solver
+.SH SYNOPSIS
+.B glpsol
+[\fIoptions...\fR] \fIfilename\fR
+.SH DESCRIPTION
+Solves linear programming (LP) and mixed integer programming (MIP) problems,
+using the GNU Linear Programming Kit (GLPK) library.
+.PP
+Problems are described in \fIfilename\fR, using one of the following formats:
+fixed MPS, free MPS, CPLEX LP or GNU MathProg.
+.SH OPTIONS
+See
+.I glpsol --help
+.SH EXAMPLES
+See \fI/usr/share/doc/glpk-utils/examples/\fR for example problems written in
+various formats.
+.SH SEE ALSO
+For a description of the MPS and CPLEX LP formats see the GLPK Reference Manual
+in the \fIglpk-doc\fR package. The GNU MathProg modeling language is
+described in a separate document in the same package.
+.PP
+Additional tips and hints are given on:
+.br
+\fIhttps://en.wikibooks.org/wiki/GLPK/Using_GLPSOL\fR
+.SH AUTHOR
+This manual page was written by Sébastien Villemot for Debian.

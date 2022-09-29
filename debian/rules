@@ -1,0 +1,15 @@
+#!/usr/bin/make -f
+
+%:
+	dh $@
+
+override_dh_auto_configure:
+	dh_auto_configure -- --enable-dl --enable-odbc --enable-mysql --with-gmp
+
+execute_after_dh_installexamples:
+	rm -f debian/glpk-utils/usr/share/doc/glpk-utils/examples/glpsol* \
+		debian/glpk-utils/usr/share/doc/glpk-utils/examples/Makefile*
+
+override_dh_compress:
+	dh_compress -X.pdf
+

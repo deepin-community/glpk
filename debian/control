@@ -1,0 +1,93 @@
+Source: glpk
+Maintainer: Debian Science Team <debian-science-maintainers@lists.alioth.debian.org>
+Uploaders: Sébastien Villemot <sebastien@debian.org>
+Section: math
+Priority: optional
+Build-Depends: debhelper-compat (= 13),
+               debhelper (>= 12.8~),
+               libgmp-dev,
+               libltdl-dev,
+               zlib1g-dev,
+               libiodbc2-dev,
+               default-libmysqlclient-dev,
+               libsuitesparse-dev
+Standards-Version: 4.5.1
+Vcs-Browser: https://salsa.debian.org/science-team/glpk
+Vcs-Git: https://salsa.debian.org/science-team/glpk.git
+Homepage: https://www.gnu.org/software/glpk/glpk.html
+Rules-Requires-Root: no
+
+Package: libglpk40
+Architecture: any
+Multi-Arch: same
+Section: libs
+Depends: ${shlibs:Depends},
+         ${misc:Depends}
+Suggests: libiodbc2-dev,
+          default-libmysqlclient-dev
+Pre-Depends: ${misc:Pre-Depends}
+Description: linear programming kit with integer (MIP) support
+ GLPK (GNU Linear Programming Kit) is intended for solving large-scale
+ linear programming (LP), mixed integer programming (MIP), and other
+ related problems. It is a set of routines written in ANSI C and
+ organized in the form of a callable library.
+ .
+ GLPK supports the GNU MathProg language, which is a subset of the
+ AMPL language.  GLPK also supports the standard MPS and LP formats.
+ .
+ The GLPK package includes the following main components:
+    * Revised simplex method.
+    * Primal-dual interior point method.
+    * Branch-and-bound method.
+    * Translator for GNU MathProg modeling language.
+    * Application program interface (API).
+ .
+ In order to get connections between the internal MathProg model
+ objects and external database tables, please install the
+ libiodbc2-dev (for the iODBC table driver) and libmysqlclient-dev
+ (for the MySQL table driver).
+
+Package: libglpk-dev
+Architecture: any
+Multi-Arch: same
+Section: libdevel
+Depends: libglpk40 (= ${binary:Version}),
+         ${misc:Depends},
+         libgmp-dev,
+         zlib1g-dev,
+         libsuitesparse-dev
+Description: linear programming kit - development files
+ GLPK (GNU Linear Programming Kit) is intended for solving large-scale
+ linear programming (LP), mixed integer programming (MIP), and other
+ related problems. It is a set of routines written in ANSI C and
+ organized in the form of a callable library.
+ .
+ This package contains static library, headers, and the development
+ manpage for libvc.
+
+Package: glpk-doc
+Architecture: all
+Multi-Arch: foreign
+Section: doc
+Depends: ${misc:Depends}
+Description: linear programming kit - documentation files
+ GLPK (GNU Linear Programming Kit) is intended for solving large-scale
+ linear programming (LP), mixed integer programming (MIP), and other
+ related problems. It is a set of routines written in ANSI C and
+ organized in the form of a callable library.
+ .
+ This package contains the C API reference manual and the GNU MathProg
+ modeling language manual.
+
+Package: glpk-utils
+Architecture: any
+Depends: ${shlibs:Depends},
+         ${misc:Depends}
+Description: linear programming kit - utility files
+ GLPK (GNU Linear Programming Kit) is intended for solving large-scale
+ linear programming (LP), mixed integer programming (MIP), and other
+ related problems. It is a set of routines written in ANSI C and
+ organized in the form of a callable library.
+ .
+ This package contains a stand-alone LP/MIP solver (glpsol) and several example
+ problems.

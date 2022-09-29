@@ -1,0 +1,11 @@
+glpk for Debian
+---------------
+
+This is the cookbook to run a GLPK example with database connection:
+
+    sudo apt-get install glpk-utils mysql-server-5.0 mysql-client-5.0 libmysqlclient15-dev
+    cd /usr/share/doc/glpk-utils/examples/sql/
+    ./mysql_setup.sh
+    glpsol --math sudoku_mysql.mod
+
+ -- Rafael Laboissiere <rafael@debian.org>, Sun, 30 Mar 2008 13:04:54 +0200
